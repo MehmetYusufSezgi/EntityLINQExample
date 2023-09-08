@@ -1,0 +1,16 @@
+C:\Users\msezg\OneDrive\Masaüstü\EntityLINQExample\EntityLINQExample\bin\Debug\EntityLINQExample.exe.config
+C:\Users\msezg\OneDrive\Masaüstü\EntityLINQExample\EntityLINQExample\bin\Debug\EntityLINQExample.exe
+C:\Users\msezg\OneDrive\Masaüstü\EntityLINQExample\EntityLINQExample\bin\Debug\EntityLINQExample.pdb
+C:\Users\msezg\OneDrive\Masaüstü\EntityLINQExample\EntityLINQExample\bin\Debug\EntityFramework.dll
+C:\Users\msezg\OneDrive\Masaüstü\EntityLINQExample\EntityLINQExample\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\msezg\OneDrive\Masaüstü\EntityLINQExample\EntityLINQExample\bin\Debug\EntityFramework.xml
+C:\Users\msezg\OneDrive\Masaüstü\EntityLINQExample\EntityLINQExample\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\msezg\OneDrive\Masaüstü\EntityLINQExample\EntityLINQExample\obj\Debug\EntityLINQExample.csproj.AssemblyReference.cache
+C:\Users\msezg\OneDrive\Masaüstü\EntityLINQExample\EntityLINQExample\obj\Debug\EntityLINQExample.csproj.SuggestedBindingRedirects.cache
+C:\Users\msezg\OneDrive\Masaüstü\EntityLINQExample\EntityLINQExample\obj\Debug\EntityLINQExample.Form1.resources
+C:\Users\msezg\OneDrive\Masaüstü\EntityLINQExample\EntityLINQExample\obj\Debug\EntityLINQExample.Properties.Resources.resources
+C:\Users\msezg\OneDrive\Masaüstü\EntityLINQExample\EntityLINQExample\obj\Debug\EntityLINQExample.csproj.GenerateResource.cache
+C:\Users\msezg\OneDrive\Masaüstü\EntityLINQExample\EntityLINQExample\obj\Debug\EntityLINQExample.csproj.CoreCompileInputs.cache
+C:\Users\msezg\OneDrive\Masaüstü\EntityLINQExample\EntityLINQExample\obj\Debug\EntityLINQExample.csproj.CopyComplete
+C:\Users\msezg\OneDrive\Masaüstü\EntityLINQExample\EntityLINQExample\obj\Debug\EntityLINQExample.exe
+C:\Users\msezg\OneDrive\Masaüstü\EntityLINQExample\EntityLINQExample\obj\Debug\EntityLINQExample.pdb

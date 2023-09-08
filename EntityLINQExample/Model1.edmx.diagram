@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f0e90e41688f4fed9e88173ec2feb46c" Name="Diagram1">
+        <EntityTypeShape EntityType="DbSinavOgrenciModel.TBLDersler" Width="1.5" PointX="1.125" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbSinavOgrenciModel.TBLNotlar" Width="1.5" PointX="3.375" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbSinavOgrenciModel.TBLOgrenci" Width="1.5" PointX="6.125" PointY="1.375" IsExpanded="true" />
+        <AssociationConnector Association="DbSinavOgrenciModel.FK_TBLNotlar_TBLDersler" ManuallyRouted="false" />
+        <AssociationConnector Association="DbSinavOgrenciModel.FK_TBLNotlar_TBLOgrenci" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

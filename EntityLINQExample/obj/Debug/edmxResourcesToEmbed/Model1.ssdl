@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DbSinavOgrenciModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="TBLDersler">
+    <Key>
+      <PropertyRef Name="DersId" />
+    </Key>
+    <Property Name="DersId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DersAdi" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TBLNotlar">
+    <Key>
+      <PropertyRef Name="NotId" />
+    </Key>
+    <Property Name="NotId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ogr" Type="int" />
+    <Property Name="Ders" Type="int" />
+    <Property Name="Sinav1" Type="smallint" />
+    <Property Name="Sinav2" Type="smallint" />
+    <Property Name="Sinav3" Type="smallint" />
+    <Property Name="Ortalama" Type="decimal" Precision="5" Scale="2" />
+    <Property Name="Durum" Type="bit" />
+  </EntityType>
+  <EntityType Name="TBLOgrenci">
+    <Key>
+      <PropertyRef Name="OgrenciId" />
+    </Key>
+    <Property Name="OgrenciId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OgrenciAdi" Type="varchar" MaxLength="30" />
+    <Property Name="OgrenciSoyadi" Type="varchar" MaxLength="20" />
+    <Property Name="OgrenciFotografi" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <Association Name="FK_TBLNotlar_TBLDersler">
+    <End Role="TBLDersler" Type="Self.TBLDersler" Multiplicity="0..1" />
+    <End Role="TBLNotlar" Type="Self.TBLNotlar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLDersler">
+        <PropertyRef Name="DersId" />
+      </Principal>
+      <Dependent Role="TBLNotlar">
+        <PropertyRef Name="Ders" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLNotlar_TBLOgrenci">
+    <End Role="TBLOgrenci" Type="Self.TBLOgrenci" Multiplicity="0..1" />
+    <End Role="TBLNotlar" Type="Self.TBLNotlar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLOgrenci">
+        <PropertyRef Name="OgrenciId" />
+      </Principal>
+      <Dependent Role="TBLNotlar">
+        <PropertyRef Name="Ogr" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DbSinavOgrenciModelStoreContainer">
+    <EntitySet Name="TBLDersler" EntityType="Self.TBLDersler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLNotlar" EntityType="Self.TBLNotlar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLOgrenci" EntityType="Self.TBLOgrenci" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_TBLNotlar_TBLDersler" Association="Self.FK_TBLNotlar_TBLDersler">
+      <End Role="TBLDersler" EntitySet="TBLDersler" />
+      <End Role="TBLNotlar" EntitySet="TBLNotlar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLNotlar_TBLOgrenci" Association="Self.FK_TBLNotlar_TBLOgrenci">
+      <End Role="TBLOgrenci" EntitySet="TBLOgrenci" />
+      <End Role="TBLNotlar" EntitySet="TBLNotlar" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

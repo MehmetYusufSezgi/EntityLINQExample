@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DbSinavOgrenciModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="TBLDersler">
+    <Key>
+      <PropertyRef Name="DersId" />
+    </Key>
+    <Property Name="DersId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DersAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TBLNotlar" Relationship="Self.FK_TBLNotlar_TBLDersler" FromRole="TBLDersler" ToRole="TBLNotlar" />
+  </EntityType>
+  <EntityType Name="TBLNotlar">
+    <Key>
+      <PropertyRef Name="NotId" />
+    </Key>
+    <Property Name="NotId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ogr" Type="Int32" />
+    <Property Name="Ders" Type="Int32" />
+    <Property Name="Sinav1" Type="Int16" />
+    <Property Name="Sinav2" Type="Int16" />
+    <Property Name="Sinav3" Type="Int16" />
+    <Property Name="Ortalama" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="Durum" Type="Boolean" />
+    <NavigationProperty Name="TBLDersler" Relationship="Self.FK_TBLNotlar_TBLDersler" FromRole="TBLNotlar" ToRole="TBLDersler" />
+    <NavigationProperty Name="TBLOgrenci" Relationship="Self.FK_TBLNotlar_TBLOgrenci" FromRole="TBLNotlar" ToRole="TBLOgrenci" />
+  </EntityType>
+  <EntityType Name="TBLOgrenci">
+    <Key>
+      <PropertyRef Name="OgrenciId" />
+    </Key>
+    <Property Name="OgrenciId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OgrenciAdi" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="OgrenciSoyadi" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="OgrenciFotografi" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="TBLNotlar" Relationship="Self.FK_TBLNotlar_TBLOgrenci" FromRole="TBLOgrenci" ToRole="TBLNotlar" />
+  </EntityType>
+  <Association Name="FK_TBLNotlar_TBLDersler">
+    <End Role="TBLDersler" Type="Self.TBLDersler" Multiplicity="0..1" />
+    <End Role="TBLNotlar" Type="Self.TBLNotlar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLDersler">
+        <PropertyRef Name="DersId" />
+      </Principal>
+      <Dependent Role="TBLNotlar">
+        <PropertyRef Name="Ders" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLNotlar_TBLOgrenci">
+    <End Role="TBLOgrenci" Type="Self.TBLOgrenci" Multiplicity="0..1" />
+    <End Role="TBLNotlar" Type="Self.TBLNotlar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLOgrenci">
+        <PropertyRef Name="OgrenciId" />
+      </Principal>
+      <Dependent Role="TBLNotlar">
+        <PropertyRef Name="Ogr" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DbSinavOgrenciEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TBLDersler" EntityType="Self.TBLDersler" />
+    <EntitySet Name="TBLNotlar" EntityType="Self.TBLNotlar" />
+    <EntitySet Name="TBLOgrenci" EntityType="Self.TBLOgrenci" />
+    <AssociationSet Name="FK_TBLNotlar_TBLDersler" Association="Self.FK_TBLNotlar_TBLDersler">
+      <End Role="TBLDersler" EntitySet="TBLDersler" />
+      <End Role="TBLNotlar" EntitySet="TBLNotlar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLNotlar_TBLOgrenci" Association="Self.FK_TBLNotlar_TBLOgrenci">
+      <End Role="TBLOgrenci" EntitySet="TBLOgrenci" />
+      <End Role="TBLNotlar" EntitySet="TBLNotlar" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
